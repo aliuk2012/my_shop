@@ -1,0 +1,6 @@
+  <% if flash.key?(:notice) %>
+    <%= bootstrap_alert_tag flash[:notice], style: 'success' %>
+  <% end %>
+  
+  <%= bootstrap_alert_tag(flash[:alert], style: 'danger') if flash.key?(:alert) %>
+  
