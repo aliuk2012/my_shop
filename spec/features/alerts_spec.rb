@@ -40,7 +40,7 @@ feature "Alerts" do
     expect(page).to have_text("Failed to create product - please check for errors.")
     
     #for launchy
-    save_and_open_page
+    #save_and_open_page
     within '.alert-danger' do
       click_button 'Close'
     end
