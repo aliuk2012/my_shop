@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 feature "Alerts" do
-  scenario "notice flash messages should be dismisssable", js: true do
-    visit '/products'
-    expect(page).to have_text("Listing Products")
+  background do
+    login_as_user
+  end
 
-    click_link "New Product"
-    expect(page).to have_text("New Product")
+
+  scenario "notice flash messages should be dismisssable", js: true do
+
+    visit '/products/new'
 
     fill_in "Name", with: "Nike T-Shirt"
     fill_in "Description", with: "Men's T-Shirt in red"
@@ -26,12 +28,7 @@ feature "Alerts" do
 
 
   scenario "alert flash messages should be dismisssable", js: true do
-    visit '/products'
-    expect(page).to have_text("Listing Products")
-
-    click_link "New Product"
-    expect(page).to have_text("New Product")
-
+    visit '/products/new'
     fill_in "Name", with: "Nike T-Shirt"
     fill_in "Description", with: "Men's T-Shirt in red"
     fill_in "Price", with: ""

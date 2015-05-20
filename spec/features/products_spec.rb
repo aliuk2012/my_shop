@@ -1,6 +1,15 @@
 require "rails_helper"
 
 feature "Products"  do
+  background do
+    user = FactoryGirl.create :user
+    
+    visit '/users/sign_in'
+    fill_in 'Email', with: 'Bob.Jones@example.com'
+    fill_in 'Password', with: 'notasecret'
+    click_button 'Log in'
+  end
+
   scenario "create a new product successfully" do
     visit '/products'
     expect(page).to have_text("Listing Products")
