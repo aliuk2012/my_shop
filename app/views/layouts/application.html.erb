@@ -8,15 +8,7 @@
 </head>
 <body>
 
-
-<nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-    <%= link_to 'My Shop', root_path, class: 'navbar-brand'%>
-    <ul class="nav navbar-nav">
-      <li><%= link_to 'Products', products_path %></li>
-    </ul>
-  </div>
-</nav>
+<%= render 'navbar' %>
 
 <div class="container">
   <%= render 'messages' %>
